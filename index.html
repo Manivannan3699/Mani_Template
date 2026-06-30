@@ -1098,6 +1098,7 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                 </div>
             </div>
 
+            <!-- SINGLE RANK DETAIL -->
             <div id="singlerank" class="detail-panel">
                 <div class="detail-header">
                     <div class="detail-icon">&#127941;</div>
@@ -1109,35 +1110,108 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                 </div>
 
                 <div class="section">
-                    <div class="section-title">Configuration Options</div>
-                    <table class="config-table">
-                        <thead>
-                            <tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="param-name">question</span><span class="param-required">*</span></td>
-                                <td><span class="param-type">string</span></td>
-                                <td><code>""</code></td>
-                                <td>jQuery selector for the question container</td>
-                            </tr>
-                            <tr>
-                                <td><span class="param-name">columns</span></td>
-                                <td><span class="param-type">number</span></td>
-                                <td><code>1</code></td>
-                                <td>Number of columns to display the rank cards in (1 or 2)</td>
-                            </tr>
-                            <tr>
-                                <td><span class="param-name">maxRank</span></td>
-                                <td><span class="param-type">number</span></td>
-                                <td><code>null</code> (auto-detected)</td>
-                                <td>Maximum allowed rank limit. Defaults to the number of answer elements found.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="section-title">Real Example from D1.txt</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Decipher XML</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;number</span> <span class="code-attr">label</span>=<span class="code-string">"Rank10"</span>
+       <span class="code-attr">size</span>=<span class="code-string">"3"</span>
+       <span class="code-attr">unique</span>=<span class="code-string">"1"</span>
+       <span class="code-attr">verify</span>=<span class="code-string">"range(1,8)"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>Hidden question for ranking.<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;comment&gt;</span>[res INS_NL]<span class="code-tag">&lt;/comment&gt;</span>
+
+  <span class="code-tag">&lt;group</span> <span class="code-attr">label</span>=<span class="code-string">"g1"</span> <span class="code-attr">builder:axis</span>=<span class="code-string">"row"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"group"</span><span class="code-tag">&gt;</span>Group 1<span class="code-tag">&lt;/div&gt;</span>
+  <span class="code-tag">&lt;/group&gt;</span>
+  <span class="code-tag">&lt;group</span> <span class="code-attr">label</span>=<span class="code-string">"g2"</span> <span class="code-attr">builder:axis</span>=<span class="code-string">"row"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"group"</span><span class="code-tag">&gt;</span><span class="code-tag">&lt;b&gt;</span>Group 2<span class="code-tag">&lt;/b&gt;&lt;/div&gt;</span>
+  <span class="code-tag">&lt;/group&gt;</span>
+  <span class="code-tag">&lt;group</span> <span class="code-attr">label</span>=<span class="code-string">"g3"</span> <span class="code-attr">builder:axis</span>=<span class="code-string">"row"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"group"</span><span class="code-tag">&gt;</span>Group <span class="code-tag">&lt;u&gt;</span>3<span class="code-tag">&lt;/u&gt;&lt;/div&gt;</span>
+  <span class="code-tag">&lt;/group&gt;</span>
+  <span class="code-tag">&lt;group</span> <span class="code-attr">label</span>=<span class="code-string">"g4"</span> <span class="code-attr">builder:axis</span>=<span class="code-string">"row"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"group"</span><span class="code-tag">&gt;</span>Group 4<span class="code-tag">&lt;/div&gt;</span>
+  <span class="code-tag">&lt;/group&gt;</span>
+
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span> <span class="code-attr">groups</span>=<span class="code-string">"g1"</span><span class="code-tag">&gt;</span>answer1<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span> <span class="code-attr">groups</span>=<span class="code-string">"g1"</span><span class="code-tag">&gt;</span>answer2<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span> <span class="code-attr">groups</span>=<span class="code-string">"g1"</span><span class="code-tag">&gt;</span>answer3<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span> <span class="code-attr">groups</span>=<span class="code-string">"g1"</span><span class="code-tag">&gt;</span><span class="code-tag">&lt;b&gt;</span>answer4<span class="code-tag">&lt;/b&gt;&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span> <span class="code-attr">groups</span>=<span class="code-string">"g1"</span><span class="code-tag">&gt;</span>answer5<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r6"</span> <span class="code-attr">groups</span>=<span class="code-string">"g2"</span><span class="code-tag">&gt;</span>answer6<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r8"</span> <span class="code-attr">groups</span>=<span class="code-string">"g2"</span><span class="code-tag">&gt;</span>answer7<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r9"</span> <span class="code-attr">groups</span>=<span class="code-string">"g2"</span><span class="code-tag">&gt;</span>answer8<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r10"</span> <span class="code-attr">groups</span>=<span class="code-string">"g3"</span><span class="code-tag">&gt;</span>answer9<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r11"</span> <span class="code-attr">groups</span>=<span class="code-string">"g3"</span><span class="code-tag">&gt;</span>answer10<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r12"</span> <span class="code-attr">groups</span>=<span class="code-string">"g3"</span><span class="code-tag">&gt;</span>answer11<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r13"</span> <span class="code-attr">groups</span>=<span class="code-string">"g3"</span><span class="code-tag">&gt;</span>answer12<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r14"</span> <span class="code-attr">groups</span>=<span class="code-string">"g4"</span><span class="code-tag">&gt;</span>answer13<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r98"</span> <span class="code-attr">groups</span>=<span class="code-string">"g4"</span> <span class="code-attr">open</span>=<span class="code-string">"1"</span> <span class="code-attr">optional</span>=<span class="code-string">"1"</span><span class="code-tag">&gt;</span>Other specify<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;noanswer</span> <span class="code-attr">label</span>=<span class="code-string">"r99"</span><span class="code-tag">&gt;</span>None of the above<span class="code-tag">&lt;/noanswer&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">name</span>=<span class="code-string">"question.after"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;script&gt;</span>
+<span class="code-func">singleRankComponent</span>({
+  question: <span class="code-string">"#question_Rank10"</span>,
+  columns: <span class="code-num">2</span>,
+  maxRank: <span class="code-num">8</span>
+});
+<span class="code-tag">&lt;/script&gt;</span>
+<span class="code-tag">&lt;style&gt;</span>
+.rankCard { width: 98% !important; }
+#btn_randomize { display:none; }
+<span class="code-tag">&lt;/style&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/number&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Generated CSS Classes</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Auto-Injected Styles</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-comment">/* Card container */</span>
+.rankCard          <span class="code-comment">// Individual rank card</span>
+.rankCard.selected  <span class="code-comment">// Selected state (purple gradient)</span>
+.rankBadge          <span class="code-comment">// Circular rank number badge</span>
+.rankContent        <span class="code-comment">// Label + OE wrapper</span>
+.rankLabel          <span class="code-comment">// Option text label</span>
+
+<span class="code-comment">/* Layout */</span>
+.rankContainer      <span class="code-comment">// Flex container for cards</span>
+.rankContainer.cols1 <span class="code-comment">// Single column</span>
+.rankContainer.cols2 <span class="code-comment">// Two columns</span>
+
+<span class="code-comment">/* Not Applicable section */</span>
+.rankNASection      <span class="code-comment">// NA wrapper</span>
+.rankNASectionLabel <span class="code-comment">// "Not applicable" header</span>
+.rankNA             <span class="code-comment">// NA card</span>
+.rankNA.checked     <span class="code-comment">// NA selected state</span>
+.rankNABadge        <span class="code-comment">// Checkmark circle</span>
+
+<span class="code-comment">/* States */</span>
+.limitReached       <span class="code-comment">// Red border + shake when max reached</span>
+.oe                 <span class="code-comment">// Open-end text field inside card</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="note-box warning">
+                    <span class="note-icon">&#9888;</span>
+                    <div class="note-content">
+                        <strong>Important:</strong> The component hides original Decipher inputs and replaces 
+                        them with styled cards. It syncs values back to hidden <code>input[type=number]</code> 
+                        fields for data collection. OE fields must have class <code>oe</code> in the XML.
+                    </div>
                 </div>
             </div>
 
+            <!-- ROW LOGIC DETAIL -->
             <div id="rowlogic" class="detail-panel">
                 <div class="detail-header">
                     <div class="detail-icon">&#128202;</div>
@@ -1147,6 +1221,55 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                     </div>
                     <button class="back-btn" onclick="showComponent('overview')">&#8592; Back to Library</button>
                 </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example from D1.txt</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Decipher XML</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;checkbox</span> <span class="code-attr">label</span>=<span class="code-string">"q1"</span>
+         <span class="code-attr">atleast</span>=<span class="code-string">"1"</span>
+         <span class="code-attr">grouping</span>=<span class="code-string">"rows"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>hidden<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;comment&gt;</span>[res INS_M]<span class="code-tag">&lt;/comment&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span><span class="code-tag">&gt;</span>row1<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span><span class="code-tag">&gt;</span>row2<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span><span class="code-tag">&gt;</span>row3<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">&gt;</span>row4<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span><span class="code-tag">&gt;</span>row5<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"c1"</span><span class="code-tag">&gt;</span>col1<span class="code-tag">&lt;/col&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">name</span>=<span class="code-string">"question.after"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;script&gt;</span>
+<span class="code-func">rowLogicComponent</span>({
+    question: <span class="code-string">"#question_q1"</span>,
+    targets: [<span class="code-string">"select"</span>],
+    type: <span class="code-string">"mutual"</span>
+});
+<span class="code-tag">&lt;/script&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/checkbox&gt;</span>
+
+<span class="code-comment">&lt;!-- Companion select question (rightOf q1) --&gt;</span>
+<span class="code-tag">&lt;select</span> <span class="code-attr">label</span>=<span class="code-string">"q2"</span>
+        <span class="code-attr">rightOf</span>=<span class="code-string">"q1"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>hidden<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;comment&gt;</span>[res INS_DD]<span class="code-tag">&lt;/comment&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span><span class="code-tag">&gt;</span>row1<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span><span class="code-tag">&gt;</span>row2<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span><span class="code-tag">&gt;</span>row3<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">&gt;</span>row4<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span><span class="code-tag">&gt;</span>row5<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"c2"</span><span class="code-tag">&gt;</span>col1<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch1"</span><span class="code-tag">&gt;</span>choice1<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch2"</span><span class="code-tag">&gt;</span>choice2<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch3"</span><span class="code-tag">&gt;</span>choice3<span class="code-tag">&lt;/choice&gt;</span>
+<span class="code-tag">&lt;/select&gt;</span></code></pre>
+                    </div>
+                </div>
+
                 <div class="section">
                     <div class="section-title">Type Behaviors</div>
                     <table class="config-table">
@@ -1166,11 +1289,38 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                                 <td>Hide + Reset targets</td>
                                 <td>Nothing</td>
                             </tr>
+                            <tr>
+                                <td><span class="param-name">hide</span></td>
+                                <td>Hide + Reset targets</td>
+                                <td>Show targets</td>
+                                <td>Nothing</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">enable</span></td>
+                                <td>Enable targets</td>
+                                <td>Disable + Reset targets</td>
+                                <td>Nothing</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">disable</span></td>
+                                <td>Disable + Reset targets</td>
+                                <td>Enable targets</td>
+                                <td>Nothing</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
+
+                <div class="note-box">
+                    <span class="note-icon">&#128161;</span>
+                    <div class="note-content">
+                        <strong>Tip:</strong> Use <code>"mutual"</code> mode when you want checkbox and text/number 
+                        inputs to be mutually exclusive within the same row. Perfect for "Other (please specify)" patterns.
+                    </div>
+                </div>
             </div>
 
+            <!-- AUTO SUM DETAIL -->
             <div id="autosum" class="detail-panel">
                 <div class="detail-header">
                     <div class="detail-icon">&#129518;</div>
@@ -1180,8 +1330,131 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                     </div>
                     <button class="back-btn" onclick="showComponent('overview')">&#8592; Back to Library</button>
                 </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example from D1.txt</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Decipher XML</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;number</span> <span class="code-attr">label</span>=<span class="code-string">"Sum1"</span>
+       <span class="code-attr">optional</span>=<span class="code-string">"0"</span>
+       <span class="code-attr">size</span>=<span class="code-string">"3"</span>
+       <span class="code-attr">ss:listDisplay</span>=<span class="code-string">"0"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>New Number Question<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;comment&gt;</span>Enter a number<span class="code-tag">&lt;/comment&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span><span class="code-tag">&gt;</span>Test Number 1<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span><span class="code-tag">&gt;</span>Test Number 2<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span><span class="code-tag">&gt;</span>Test Number 3<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">&gt;</span>Test Number 4<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span><span class="code-tag">&gt;</span>Test Number 5<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span><span class="code-tag">&gt;</span>1<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c2"</span><span class="code-tag">&gt;</span>2<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c3"</span><span class="code-tag">&gt;</span>3<span class="code-tag">&lt;/col&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">arg:qn</span>=<span class="code-string">"Sum1"</span> <span class="code-attr">name</span>=<span class="code-string">"el.text"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"number"</span> <span class="code-attr">name</span>=<span class="code-string">"$(name)"</span> <span class="code-attr">id</span>=<span class="code-string">"$(id)"</span>
+       <span class="code-attr">value</span>=<span class="code-string">"$(value)"</span> <span class="code-attr">size</span>=<span class="code-string">"3"</span>
+       <span class="code-attr">class</span>=<span class="code-string">"input text-input $(qn)_${row.label}_${col.label}"</span>
+       <span class="code-attr">aria-invalid</span>=<span class="code-string">"true"</span> <span class="code-attr">$(extra)</span>
+       <span class="code-attr">style</span>=<span class="code-string">"width: 72%;"</span><span class="code-tag">/&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">cond</span>=<span class="code-string">"1"</span> <span class="code-attr">name</span>=<span class="code-string">"question.after"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;script&gt;</span>
+  <span class="code-comment">// ROW MODE: c3 = c1 + c2 (per row), limit = 100</span>
+  <span class="code-func">autoSum</span>({
+    question : <span class="code-string">"#question_Sum1"</span>,
+    mode     : <span class="code-string">"row"</span>,
+    from     : <span class="code-string">"c1,c2"</span>,
+    to       : <span class="code-string">"c3"</span>,
+    sum      : <span class="code-num">100</span>
+  });
+
+  <span class="code-comment">// COLUMN MODE: r4 = r1+r2+r3 (per column)</span>
+  <span class="code-func">autoSum</span>({
+    question : <span class="code-string">"#question_Sum1"</span>,
+    mode     : <span class="code-string">"col"</span>,
+    from     : <span class="code-string">"r1,r2,r3"</span>,
+    to       : <span class="code-string">"r4"</span>
+  });
+<span class="code-tag">&lt;/script&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/number&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Configuration Options</div>
+                    <table class="config-table">
+                        <thead>
+                            <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="param-name">question</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-required">*</span></td>
+                                <td>jQuery selector for the question container</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">from</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-required">*</span></td>
+                                <td>Comma-separated source columns (row mode) or rows (col mode)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">to</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-required">*</span></td>
+                                <td>Target column (row mode) or row (col mode)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">sum</span></td>
+                                <td><span class="param-type">number</span></td>
+                                <td><span class="param-optional">opt</span></td>
+                                <td>Limit value for calculation. If omitted, shows raw sum.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">op</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-optional">opt</span></td>
+                                <td><code>"subtract"</code> (default) or <code>"add"</code></td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">mode</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-optional">opt</span></td>
+                                <td><code>"row"</code> (default) or <code>"col"</code></td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">rows</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-optional">opt</span></td>
+                                <td>Comma-separated row labels to restrict (row mode only)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">cols</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-optional">opt</span></td>
+                                <td>Comma-separated column labels to restrict (col mode only)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box">
+                    <span class="note-icon">&#128161;</span>
+                    <div class="note-content">
+                        <strong>Auto-Detection:</strong> The component auto-detects the prefix from class names 
+                        (e.g., <code>Q1_r1_c1</code> extracts prefix <code>Q1</code>). Target inputs become 
+                        readonly with gray background. Negative values show red background (#fdd).
+                    </div>
+                </div>
             </div>
 
+            <!-- AUTO SUM + NONE DETAIL -->
             <div id="autosumnone" class="detail-panel">
                 <div class="detail-header">
                     <div class="detail-icon">&#10133;</div>
@@ -1191,8 +1464,88 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                     </div>
                     <button class="back-btn" onclick="showComponent('overview')">&#8592; Back to Library</button>
                 </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example from D1.txt</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Decipher XML</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;number</span> <span class="code-attr">label</span>=<span class="code-string">"Q110"</span>
+       <span class="code-attr">grouping</span>=<span class="code-string">"cols"</span>
+       <span class="code-attr">optional</span>=<span class="code-string">"0"</span>
+       <span class="code-attr">size</span>=<span class="code-string">"4"</span>
+       <span class="code-attr">verify</span>=<span class="code-string">"range(0,999)"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>Test 001<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;comment&gt;</span>Please enter a whole number in each box.<span class="code-tag">&lt;/comment&gt;</span>
+
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"col1"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;b&gt;</span>&lt;12 years old<span class="code-tag">&lt;/b&gt;</span> with <span class="code-tag">&lt;b&gt;</span>mild-moderate<span class="code-tag">&lt;/b&gt;</span> disease
+  <span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c2"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"col2"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;b&gt;</span>&lt;12 years old<span class="code-tag">&lt;/b&gt;</span> with <span class="code-tag">&lt;b&gt;</span>classic/severe<span class="code-tag">&lt;/b&gt;</span> disease
+  <span class="code-tag">&lt;/col&gt;</span>
+
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span><span class="code-tag">&gt;</span>Sepiapterin + diet restrictions<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span><span class="code-tag">&gt;</span>Pegvaliase +/- diet restrictions<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span><span class="code-tag">&gt;</span>Generic Sapropterin + diet restrictions<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">&gt;</span>Branded Sapropterin + diet restrictions<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span><span class="code-tag">&gt;</span>Branded Sapropterin (Javygtor)<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r6"</span><span class="code-tag">&gt;</span>Diet restrictions only<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r98"</span> <span class="code-attr">open</span>=<span class="code-string">"1"</span> <span class="code-attr">optional</span>=<span class="code-string">"1"</span><span class="code-tag">&gt;</span>Other (please specify:)<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r99"</span> <span class="code-attr">optional</span>=<span class="code-string">"1"</span>
+        <span class="code-attr">ss:rowClassNames</span>=<span class="code-string">"None1"</span><span class="code-tag">&gt;</span>None of the above<span class="code-tag">&lt;/row&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">name</span>=<span class="code-string">"question.after"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;script&gt;</span>
+<span class="code-func">autoSumWithNone</span>({
+    question: <span class="code-string">"#question_Q110"</span>,
+    hideClass: <span class="code-string">"Q110x1"</span>
+});
+<span class="code-tag">&lt;/script&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/number&gt;</span>
+
+<span class="code-comment">&lt;!-- Hidden helper checkbox for autoSumWithNone --&gt;</span>
+<span class="code-tag">&lt;checkbox</span> <span class="code-attr">label</span>=<span class="code-string">"Q110x1"</span>
+         <span class="code-attr">ss:questionClassNames</span>=<span class="code-string">"Q110x1"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span><span class="code-tag">&lt;span&gt;&lt;/span&gt;&lt;/title&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span> <span class="code-attr">ss:rowClassNames</span>=<span class="code-string">"row1"</span><span class="code-tag">&gt;</span>...<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span> <span class="code-attr">ss:rowClassNames</span>=<span class="code-string">"row2"</span><span class="code-tag">&gt;</span>...<span class="code-tag">&lt;/row&gt;</span>
+<span class="code-tag">&lt;/checkbox&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">How It Works</div>
+                    <ol class="steps">
+                        <li class="active">
+                            <div class="step-title">None Checkbox</div>
+                            <div class="step-desc">When "None" checkbox is checked, all <code>.text-input</code> values in that column are cleared.</div>
+                        </li>
+                        <li>
+                            <div class="step-title">Number Input</div>
+                            <div class="step-desc">When user types in any number field, the "None" checkbox is automatically unchecked.</div>
+                        </li>
+                        <li>
+                            <div class="step-title">Column Detection</div>
+                            <div class="step-desc">Auto-detects column count by scanning for <code>col1, col2, ...</code> classes.</div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="note-box warning">
+                    <span class="note-icon">&#9888;</span>
+                    <div class="note-content">
+                        <strong>Class Requirements:</strong> The "None" row must have class <code>None1</code>. 
+                        Number inputs must have class <code>text-input</code>. The helper question will be hidden 
+                        via the <code>hideClass</code> parameter.
+                    </div>
+                </div>
             </div>
 
+            <!-- HIGHLIGHTER DETAIL -->
             <div id="highlighter" class="detail-panel">
                 <div class="detail-header">
                     <div class="detail-icon">&#128397;</div>
@@ -1202,8 +1555,197 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                     </div>
                     <button class="back-btn" onclick="showComponent('overview')">&#8592; Back to Library</button>
                 </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example from D1.txt — "Like" Only (HIMG_1)</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Decipher XML — Like Only</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;checkbox</span> <span class="code-attr">label</span>=<span class="code-string">"HIMG_1"</span>
+         <span class="code-attr">atleast</span>=<span class="code-string">"1"</span>
+         <span class="code-attr">fir</span>=<span class="code-string">"off"</span>
+         <span class="code-attr">grouping</span>=<span class="code-string">"cols"</span>
+         <span class="code-attr">ss:listDisplay</span>=<span class="code-string">"0"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>
+    <span class="code-tag">&lt;p&gt;</span>Looking at the description of <span class="code-tag">&lt;strong&gt;</span>Product X<span class="code-tag">&lt;/strong&gt;</span>...<span class="code-tag">&lt;/p&gt;</span>
+    <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"img-container"</span><span class="code-tag">&gt;</span>
+      <span class="code-tag">&lt;img</span> <span class="code-attr">src</span>=<span class="code-string">"[rel PRODUCT_X.JPG]"</span>
+           <span class="code-attr">width</span>=<span class="code-string">"924px"</span> <span class="code-attr">height</span>=<span class="code-string">"483px"</span>
+           <span class="code-attr">usemap</span>=<span class="code-string">"#image-map"</span> <span class="code-attr">class</span>=<span class="code-string">"imageMap"</span><span class="code-tag">/&gt;</span>
+    <span class="code-tag">&lt;/div&gt;</span>
+    <span class="code-tag">&lt;map</span> <span class="code-attr">name</span>=<span class="code-string">"image-map"</span><span class="code-tag">&gt;</span>
+      <span class="code-tag">&lt;area</span> <span class="code-attr">data-row</span>=<span class="code-string">"r1"</span>
+            <span class="code-attr">coords</span>=<span class="code-string">"384,36,100,14"</span> <span class="code-attr">shape</span>=<span class="code-string">"rect"</span><span class="code-tag">/&gt;</span>
+      <span class="code-tag">&lt;area</span> <span class="code-attr">data-row</span>=<span class="code-string">"r2"</span>
+            <span class="code-attr">coords</span>=<span class="code-string">"601,36,386,14"</span> <span class="code-attr">shape</span>=<span class="code-string">"rect"</span><span class="code-tag">/&gt;</span>
+      <span class="code-comment">&lt;!-- ... more area tags ... --&gt;</span>
+    <span class="code-tag">&lt;/map&gt;</span>
+  <span class="code-tag">&lt;/title&gt;</span>
+
+  <span class="code-tag">&lt;validate&gt;</span>
+for each in this.rows:
+    if each.c1 and each.c2 and each.label not in ['r99']:
+        error(res.unique_err)
+  <span class="code-tag">&lt;/validate&gt;</span>
+
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span> <span class="code-attr">cond</span>=<span class="code-string">"1"</span>
+        <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"posCol"</span><span class="code-tag">&gt;</span>Most Compelling<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c2"</span> <span class="code-attr">cond</span>=<span class="code-string">"1"</span> <span class="code-attr">optional</span>=<span class="code-string">"1"</span>
+        <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"negCol"</span><span class="code-tag">&gt;</span>Least Compelling<span class="code-tag">&lt;/col&gt;</span>
+
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span> <span class="code-attr">ss:rowClassNames</span>=<span class="code-string">"r1"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;span</span> <span class="code-attr">class</span>=<span class="code-string">"coordn"</span><span class="code-tag">&gt;</span>384,36,100,14<span class="code-tag">&lt;/span&gt;</span>
+    - Treatment of <span class="code-tag">&lt;b&gt;&lt;i&gt;</span>moderate-to-severe<span class="code-tag">&lt;/i&gt;&lt;/b&gt;</span> plaque psoriasis
+  <span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-comment">&lt;!-- ... rows r2-r29 ... --&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r99"</span> <span class="code-attr">cond</span>=<span class="code-string">"1"</span> <span class="code-attr">exclusive</span>=<span class="code-string">"1"</span>
+        <span class="code-attr">ss:rowClassNames</span>=<span class="code-string">"exclusive_btn"</span><span class="code-tag">&gt;</span>
+    Nothing in the product profile is positive...
+  <span class="code-tag">&lt;/row&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">label</span>=<span class="code-string">"highlighter_unified"</span>
+         <span class="code-attr">name</span>=<span class="code-string">"question.after"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;script&gt;</span>
+<span class="code-func">highlighterComponent</span>({
+    question : <span class="code-string">"#question_HIMG_1"</span>,
+    type : <span class="code-string">"L"</span>,
+    btn_lbl1 : <span class="code-string">"${res.Q4HIMG_1_1_btn1}"</span>,
+    btn_lbl2 : <span class="code-string">"${res.Q4HIMG_1_1_btn2}"</span>
+});
+<span class="code-tag">&lt;/script&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/checkbox&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example — "Dislike" Only (HIMG_2)</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">With Pre-Locked Rows from HIMG_1</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;checkbox</span> <span class="code-attr">label</span>=<span class="code-string">"HIMG_2"</span><span class="code-tag">&gt;</span>
+  <span class="code-comment">&lt;!-- Same title/image map as HIMG_1 --&gt;</span>
+
+  <span class="code-tag">&lt;exec&gt;</span>
+for x in HIMG_1.rows:
+    if x.c1:
+        HIMG_2.attr(x.label).c1.val=1
+  <span class="code-tag">&lt;/exec&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">label</span>=<span class="code-string">"multi_check"</span>
+         <span class="code-attr">arg:qn</span>=<span class="code-string">"HIMG_2"</span>
+         <span class="code-attr">name</span>=<span class="code-string">"el.checkbox"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"checkbox"</span> <span class="code-attr">name</span>=<span class="code-string">"$(name)"</span> <span class="code-attr">id</span>=<span class="code-string">"$(id)"</span>
+       <span class="code-attr">value</span>=<span class="code-string">"1"</span> <span class="code-attr">$(checked)</span>
+       <span class="code-attr">class</span>=<span class="code-string">"${flags.CSS} input checkbox $(qn)_${row.label}"</span>
+       <span class="code-attr">$(extra)</span><span class="code-tag">/&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">name</span>=<span class="code-string">"question.after"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;script&gt;</span>
+<span class="code-func">highlighterComponent</span>({
+    question : <span class="code-string">"#question_HIMG_2"</span>,
+    type : <span class="code-string">"D"</span>,
+    btn_lbl1 : <span class="code-string">"${res.Q4HIMG_1_1_btn1}"</span>,
+    btn_lbl2 : <span class="code-string">"${res.Q4HIMG_1_1_btn2}"</span>
+});
+<span class="code-tag">&lt;/script&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/checkbox&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example — "Like + Dislike" (HIMG_3)</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">LD Mode</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;checkbox</span> <span class="code-attr">label</span>=<span class="code-string">"HIMG_3"</span><span class="code-tag">&gt;</span>
+  <span class="code-comment">&lt;!-- Same title/image map structure --&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">name</span>=<span class="code-string">"question.after"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;script&gt;</span>
+<span class="code-func">highlighterComponent</span>({
+    question : <span class="code-string">"#question_HIMG_1"</span>,
+    type : <span class="code-string">"LD"</span>,
+    btn_lbl1 : <span class="code-string">"${res.Q4HIMG_1_1_btn1}"</span>,
+    btn_lbl2 : <span class="code-string">"${res.Q4HIMG_1_1_btn2}"</span>
+});
+<span class="code-tag">&lt;/script&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/checkbox&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Configuration Options</div>
+                    <table class="config-table">
+                        <thead>
+                            <tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="param-name">question</span><span class="param-required">*</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><code>""</code></td>
+                                <td>jQuery selector for the question</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">type</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><code>"LD"</code></td>
+                                <td><code>"LD"</code>=Like+Dislike, <code>"L"</code>=Like only, <code>"D"</code>=Dislike only</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">btn_lbl1</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><code>"Like"</code></td>
+                                <td>Label for positive/like button</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">btn_lbl2</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><code>"Dislike"</code></td>
+                                <td>Label for negative/dislike button</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Lock Classes</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Pre-Locking Rows</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-comment">// Add these classes to checkbox inputs to pre-lock rows:</span>
+
+<span class="code-comment">// Positive lock (green highlight, readonly)</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">class</span>=<span class="code-string">"Q1_r1_passLock"</span> <span class="code-attr">type</span>=<span class="code-string">"checkbox"</span><span class="code-tag">/&gt;</span>
+
+<span class="code-comment">// Negative lock (red highlight, readonly)</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">class</span>=<span class="code-string">"Q1_r2_negLock"</span> <span class="code-attr">type</span>=<span class="code-string">"checkbox"</span><span class="code-tag">/&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <span class="note-icon">&#127912;</span>
+                    <div class="note-content">
+                        <strong>Visual States:</strong> <code>.highlight.positive</code> = green border + 25% green bg. 
+                        <code>.highlight.negative</code> = red border + 25% red bg. Hover adds 40% opacity. 
+                        Click cycles: none &#8594; positive &#8594; negative &#8594; none (LD mode).
+                    </div>
+                </div>
             </div>
 
+            <!-- OE DETAIL -->
             <div id="oe" class="detail-panel">
                 <div class="detail-header">
                     <div class="detail-icon">&#128221;</div>
@@ -1213,8 +1755,220 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                     </div>
                     <button class="back-btn" onclick="showComponent('overview')">&#8592; Back to Library</button>
                 </div>
+
+                <div class="section">
+                    <div class="section-title">How It Works</div>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin-bottom: 20px;">
+                        The OE system automatically shows open-end text fields when specific options are selected. 
+                        It uses a class naming convention and moves the OE input into the selected option's container.
+                    </p>
+
+                    <ol class="steps">
+                        <li class="active">
+                            <div class="step-title">Name Your OE Field</div>
+                            <div class="step-desc">Give the OE input a class following the pattern: <code>{questionClass}_{optionClass}_showOE_1</code></div>
+                        </li>
+                        <li>
+                            <div class="step-title">Add OE_hide Class</div>
+                            <div class="step-desc">Add <code>OE_hide</code> class to hide the OE initially.</div>
+                        </li>
+                        <li>
+                            <div class="step-title">Auto-Behavior</div>
+                            <div class="step-desc">When option is selected, OE appears next to it. When deselected, OE hides and clears.</div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example 1 — Select Dropdown + OE (D1s + D1s1)</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Select with OE Trigger</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;select</span> <span class="code-attr">label</span>=<span class="code-string">"D1s"</span> <span class="code-attr">optional</span>=<span class="code-string">"0"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>Hidden<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;comment&gt;</span>[res INS_DD]<span class="code-tag">&lt;/comment&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span><span class="code-tag">&gt;</span>1<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span><span class="code-tag">&gt;</span>2<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span><span class="code-tag">&gt;</span>3<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">&gt;</span>4<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span><span class="code-tag">&gt;</span>5<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch1"</span><span class="code-tag">&gt;</span>ch1<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch2"</span><span class="code-tag">&gt;</span>ch2<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch3"</span><span class="code-tag">&gt;</span>ch3<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch4"</span> <span class="code-attr">ss:choiceClassNames</span>=<span class="code-string">"hn"</span><span class="code-tag">&gt;</span>ch4<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch5"</span> <span class="code-attr">ss:choiceClassNames</span>=<span class="code-string">"hn"</span><span class="code-tag">&gt;</span>ch5<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch6"</span><span class="code-tag">&gt;</span>ch6<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span><span class="code-tag">&gt;</span>rank1<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c2"</span><span class="code-tag">&gt;</span>rank2<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c3"</span><span class="code-tag">&gt;</span>rank3<span class="code-tag">&lt;/col&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">arg:qn</span>=<span class="code-string">"Q1"</span> <span class="code-attr">name</span>=<span class="code-string">"el.select.element"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;option</span> <span class="code-attr">value</span>=<span class="code-string">"$(value)"</span> <span class="code-attr">$(selected)</span>
+  <span class="code-attr">class</span>=<span class="code-string">"${choice.styles.ss.choiceClassNames}
+              $(qn)_${row.label}_${col.label}_showOE"</span><span class="code-tag">&gt;</span>
+  $(text)
+<span class="code-tag">&lt;/option&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/select&gt;</span>
+
+<span class="code-comment">&lt;!-- Hidden OE text question --&gt;</span>
+<span class="code-tag">&lt;text</span> <span class="code-attr">label</span>=<span class="code-string">"D1s1"</span>
+      <span class="code-attr">optional</span>=<span class="code-string">"0"</span>
+      <span class="code-attr">ss:questionClassNames</span>=<span class="code-string">"OE_hide"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>Hidden<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span><span class="code-tag">&gt;</span>1<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span><span class="code-tag">&gt;</span>2<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span><span class="code-tag">&gt;</span>3<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">&gt;</span>4<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span><span class="code-tag">&gt;</span>5<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span><span class="code-tag">&gt;</span>rank1<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c2"</span><span class="code-tag">&gt;</span>rank2<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c3"</span><span class="code-tag">&gt;</span>rank3<span class="code-tag">&lt;/col&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">arg:qn</span>=<span class="code-string">"Q1"</span> <span class="code-attr">name</span>=<span class="code-string">"el.text"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"text"</span> <span class="code-attr">name</span>=<span class="code-string">"$(name)"</span> <span class="code-attr">id</span>=<span class="code-string">"$(id)"</span>
+       <span class="code-attr">value</span>=<span class="code-string">"$(value)"</span> <span class="code-attr">size</span>=<span class="code-string">"$(size)"</span>
+       <span class="code-attr">class</span>=<span class="code-string">"input text-input $(qn)_${row.label}_${col.label}_showOE_1"</span>
+       <span class="code-attr">aria-invalid</span>=<span class="code-string">"true"</span> <span class="code-attr">$(extra)</span><span class="code-tag">/&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/text&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example 2 — Grid Select + OE (C50_4/C50_5 + C50_5_OE)</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Select with "Other" OE</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;select</span> <span class="code-attr">label</span>=<span class="code-string">"C50_4"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span> <span class="code-attr">ss:rowClassNames</span>=<span class="code-string">"row4"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;b&gt;</span>First Tx of choice for 4L<span class="code-tag">&lt;/b&gt;</span>
+  <span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"col1"</span><span class="code-tag">&gt;</span>Patient Type A<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c2"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"col2"</span><span class="code-tag">&gt;</span>Patient Type B<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c3"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"col3"</span><span class="code-tag">&gt;</span>Patient Type C<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch1"</span> <span class="code-attr">value</span>=<span class="code-string">"1"</span><span class="code-tag">&gt;</span>Abecma<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch2"</span> <span class="code-attr">value</span>=<span class="code-string">"2"</span><span class="code-tag">&gt;</span>Carvykti<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch99"</span> <span class="code-attr">ss:choiceClassNames</span>=<span class="code-string">"open"</span>
+        <span class="code-attr">value</span>=<span class="code-string">"99"</span><span class="code-tag">&gt;</span>Others (Please Specify ___)<span class="code-tag">&lt;/choice&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">arg:qn</span>=<span class="code-string">"C50"</span> <span class="code-attr">name</span>=<span class="code-string">"el.select.element"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;option</span> <span class="code-attr">value</span>=<span class="code-string">"$(value)"</span> <span class="code-attr">$(selected)</span>
+  <span class="code-attr">class</span>=<span class="code-string">"${choice.styles.ss.choiceClassNames}
+              $(qn)_${row.label}_${col.label}_showOE"</span><span class="code-tag">&gt;</span>
+  $(text)
+<span class="code-tag">&lt;/option&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/select&gt;</span>
+
+<span class="code-comment">&lt;!-- Hidden OE text for C50_4 and C50_5 --&gt;</span>
+<span class="code-tag">&lt;text</span> <span class="code-attr">label</span>=<span class="code-string">"C50_5_OE"</span>
+      <span class="code-attr">optional</span>=<span class="code-string">"0"</span>
+      <span class="code-attr">ss:questionClassNames</span>=<span class="code-string">"OE_hide"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>hidden<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;comment&gt;</span>Please be as specific as possible<span class="code-tag">&lt;/comment&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span> <span class="code-attr">ss:rowClassNames</span>=<span class="code-string">"row4"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;b&gt;</span>First Tx of choice for 4L<span class="code-tag">&lt;/b&gt;</span>
+  <span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span> <span class="code-attr">ss:rowClassNames</span>=<span class="code-string">"row5"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;b&gt;</span>Subsequent Tx of choice for 5L<span class="code-tag">&lt;/b&gt;</span>
+  <span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c1"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"col1"</span><span class="code-tag">&gt;</span>Patient Type A<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c2"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"col2"</span><span class="code-tag">&gt;</span>Patient Type B<span class="code-tag">&lt;/col&gt;</span>
+  <span class="code-tag">&lt;col</span> <span class="code-attr">label</span>=<span class="code-string">"c3"</span> <span class="code-attr">ss:colClassNames</span>=<span class="code-string">"col3"</span><span class="code-tag">&gt;</span>Patient Type C<span class="code-tag">&lt;/col&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">arg:qn</span>=<span class="code-string">"C50"</span> <span class="code-attr">name</span>=<span class="code-string">"el.text"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"text"</span> <span class="code-attr">name</span>=<span class="code-string">"$(name)"</span> <span class="code-attr">id</span>=<span class="code-string">"$(id)"</span>
+       <span class="code-attr">value</span>=<span class="code-string">"$(value)"</span> <span class="code-attr">size</span>=<span class="code-string">"$(size)"</span>
+       <span class="code-attr">class</span>=<span class="code-string">"input text-input $(qn)_${row.label}_${col.label}_showOE_1"</span>
+       <span class="code-attr">aria-invalid</span>=<span class="code-string">"true"</span> <span class="code-attr">$(extra)</span><span class="code-tag">/&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/text&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example 3 — Single Select + OE (X9 + X9A)</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Simple Select with OE</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;select</span> <span class="code-attr">label</span>=<span class="code-string">"X9"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>Hidden question.<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch1"</span><span class="code-tag">&gt;</span>option 1<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch2"</span><span class="code-tag">&gt;</span>option 2<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch3"</span><span class="code-tag">&gt;</span>option 3<span class="code-tag">&lt;/choice&gt;</span>
+  <span class="code-tag">&lt;choice</span> <span class="code-attr">label</span>=<span class="code-string">"ch4"</span><span class="code-tag">&gt;</span>Other specify<span class="code-tag">&lt;/choice&gt;</span>
+
+  <span class="code-tag">&lt;style</span> <span class="code-attr">arg:qn</span>=<span class="code-string">"X9"</span> <span class="code-attr">name</span>=<span class="code-string">"el.select.element"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;option</span> <span class="code-attr">value</span>=<span class="code-string">"$(value)"</span> <span class="code-attr">$(selected)</span>
+  <span class="code-attr">class</span>=<span class="code-string">"$(qn)_showOE"</span><span class="code-tag">&gt;</span>
+  $(text)
+<span class="code-tag">&lt;/option&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/select&gt;</span>
+
+<span class="code-tag">&lt;text</span> <span class="code-attr">label</span>=<span class="code-string">"X9A"</span>
+      <span class="code-attr">ss:questionClassNames</span>=<span class="code-string">"OE_hide"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>Hidden question.<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">/&gt;</span>
+  <span class="code-tag">&lt;style</span> <span class="code-attr">arg:qn</span>=<span class="code-string">"X9"</span> <span class="code-attr">name</span>=<span class="code-string">"el.text"</span><span class="code-tag">&gt;&lt;![CDATA[</span>
+<span class="code-tag">&lt;input</span> <span class="code-attr">type</span>=<span class="code-string">"text"</span> <span class="code-attr">name</span>=<span class="code-string">"$(name)"</span> <span class="code-attr">id</span>=<span class="code-string">"$(id)"</span>
+       <span class="code-attr">value</span>=<span class="code-string">"$(value)"</span> <span class="code-attr">size</span>=<span class="code-string">"$(size)"</span>
+       <span class="code-attr">class</span>=<span class="code-string">"input text-input $(qn)_showOE_1"</span>
+       <span class="code-attr">aria-invalid</span>=<span class="code-string">"true"</span> <span class="code-attr">$(extra)</span><span class="code-tag">/&gt;</span>
+<span class="code-tag">]]&gt;&lt;/style&gt;</span>
+<span class="code-tag">&lt;/text&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Class Naming Convention</div>
+                    <table class="config-table">
+                        <thead>
+                            <tr><th>Class Pattern</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="param-name">{Q}_r{N}_c{N}_showOE</span></td>
+                                <td>Added to select option to trigger OE for grid questions</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">{Q}_r{N}_c{N}_showOE_1</span></td>
+                                <td>Added to OE text input for grid questions</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">{Q}_showOE</span></td>
+                                <td>Added to select option for single-select questions</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">{Q}_showOE_1</span></td>
+                                <td>Added to OE text input for single-select questions</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">OE_hide</span></td>
+                                <td>Initial hidden state on the OE question container</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box success">
+                    <span class="note-icon">&#9989;</span>
+                    <div class="note-content">
+                        <strong>Auto-Focus:</strong> When an OE field appears, it automatically receives focus 
+                        after 100ms. The OE is moved into the same container as the selected option, so it appears 
+                        inline next to the label.
+                    </div>
+                </div>
             </div>
 
+            <!-- PIPING DETAIL -->
             <div id="piping" class="detail-panel">
                 <div class="detail-header">
                     <div class="detail-icon">&#128260;</div>
@@ -1224,9 +1978,85 @@ $ (<span class="code-func">document</span>).ready(<span class="code-keyword">fun
                     </div>
                     <button class="back-btn" onclick="showComponent('overview')">&#8592; Back to Library</button>
                 </div>
-            </div>
 
-        </main>
+                <div class="section">
+                    <div class="section-title">How It Works</div>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin-bottom: 20px;">
+                        Piping transfers answers from a source question to a target element. It supports all input types: 
+                        radio, checkbox, text, number, and textarea. For radio/checkbox, it pipes the label text by default, 
+                        or the OE value if an open-end field is filled.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Real Example from D1.txt — Pipe to Span</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Pipe Radio Answer into Checkbox Title</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-tag">&lt;radio</span> <span class="code-attr">label</span>=<span class="code-string">"X1"</span>
+        <span class="code-attr">atm1d:showInput</span>=<span class="code-string">"0"</span>
+        <span class="code-attr">shuffle</span>=<span class="code-string">"rows"</span>
+        <span class="code-attr">ss:listDisplay</span>=<span class="code-string">"1"</span>
+        <span class="code-attr">uses</span>=<span class="code-string">"atm1d.11"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>single select<span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;comment&gt;</span>[res INS_S]<span class="code-tag">&lt;/comment&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span> <span class="code-attr">open</span>=<span class="code-string">"1"</span><span class="code-tag">&gt;</span>one<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span><span class="code-tag">&gt;</span>two<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span><span class="code-tag">&gt;</span>three<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">&gt;</span>four<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span><span class="code-tag">&gt;</span>five<span class="code-tag">&lt;/row&gt;</span>
+<span class="code-tag">&lt;/radio&gt;</span>
+
+<span class="code-comment">&lt;!-- Target: pipe X1 answer into .pipe1 span --&gt;</span>
+<span class="code-tag">&lt;checkbox</span> <span class="code-attr">label</span>=<span class="code-string">"X2"</span> <span class="code-attr">atleast</span>=<span class="code-string">"1"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>multi select: <span class="code-tag">&lt;span</span> <span class="code-attr">class</span>=<span class="code-string">"pipe1"</span><span class="code-tag">&gt;</span>test<span class="code-tag">&lt;/span&gt;</span>
+    <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"logic-config"</span>
+         <span class="code-attr">data-cond</span>=<span class="code-string">"X1_r1"</span>
+         <span class="code-attr">data-pipe</span>=<span class="code-string">".pipe1:X1"</span>
+         <span class="code-attr">data-target</span>=<span class="code-string">"X2_r(1,2,3)"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;/div&gt;</span>
+  <span class="code-tag">&lt;/title&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r1"</span><span class="code-tag">&gt;</span>one<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r2"</span><span class="code-tag">&gt;</span>two<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r3"</span><span class="code-tag">&gt;</span>three<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r4"</span><span class="code-tag">&gt;</span>four<span class="code-tag">&lt;/row&gt;</span>
+  <span class="code-tag">&lt;row</span> <span class="code-attr">label</span>=<span class="code-string">"r5"</span><span class="code-tag">&gt;</span>five<span class="code-tag">&lt;/row&gt;</span>
+<span class="code-tag">&lt;/checkbox&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Pipe Format</div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">Syntax</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                        <pre><code><span class="code-comment">// Format: targetSelector:sourceQuestion</span>
+<span class="code-comment">// Multiple pipes separated by commas</span>
+
+<span class="code-attr">data-pipe</span>=<span class="code-string">".pipe1:X1"</span>
+
+<span class="code-comment">// The script finds the target element and sets its text to:</span>
+<span class="code-comment">// - For radio/checkbox: the label text of checked items</span>
+<span class="code-comment">// - If OE exists and has value: the OE text instead</span>
+<span class="code-comment">// - For text/number/textarea: the input value</span>
+<span class="code-comment">// Multiple checked items are joined with ", "</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <span class="note-icon">&#128161;</span>
+                    <div class="note-content">
+                        <strong>Priority:</strong> If a checked option has an associated OE field with text entered, 
+                        the OE value takes priority over the label text. This is useful for "Other (please specify)" 
+                        options where you want to pipe the custom text.
+                    </div>
+                </div>
+            </div>
+		</main>
     </div>
 
     <script>
